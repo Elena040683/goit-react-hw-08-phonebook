@@ -7,13 +7,12 @@ import { fetchContacts, deleteContact } from '../../redux/contacts/operations';
 import { getVisibleContacts } from '../../redux/contacts/selectors';
 
 export default function ContactList() {
+  const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-
-  const contacts = useSelector(getVisibleContacts);
 
   const onDeleteContact = id => dispatch(deleteContact(id));
   return (
