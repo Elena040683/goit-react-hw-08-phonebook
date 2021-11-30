@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './ContactForm.module.css';
-import operations from '../../redux/contacts/operations';
+import { addContact } from '../../redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/contacts/selectors';
 
@@ -39,7 +39,7 @@ export default function ContactForm() {
     ) {
       return alert(`${name} is already exist`);
     }
-    dispatch(operations.addContact(name, number));
+    dispatch(addContact(name, number));
     resetForm();
   };
 

@@ -13,7 +13,9 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
-  background-image: url('./images/phonebook.jpg');
+  background-image: url('./images/bg12.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 img {
