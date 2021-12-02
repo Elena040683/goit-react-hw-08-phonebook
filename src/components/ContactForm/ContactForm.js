@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import styles from './ContactForm.module.css';
-import { addContact } from '../../redux/contacts/operations';
+import { addContacts } from '../../redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/contacts/selectors';
 
 export default function ContactForm() {
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
+
+  const [contact, setContact] = useState(null);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
-  const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -38,8 +39,8 @@ export default function ContactForm() {
       )
     ) {
       return alert(`${name} is already exist`);
-    }
-    dispatch(addContact(name, number));
+    } else dispatch(addContacts(name, number));
+    setContact(contact);
     resetForm();
   };
 
