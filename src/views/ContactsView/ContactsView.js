@@ -7,8 +7,9 @@ const ContactsView = () => {
   return (
     <div className={s.container}>
       <ContactForm />
-      <h2>Contacts</h2>
+
       <Filter />
+      <h2>Contacts</h2>
       <ContactList />
     </div>
   );

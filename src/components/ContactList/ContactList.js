@@ -10,9 +10,7 @@ export default function ContactList() {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => dispatch(fetchContacts()), [dispatch]);
 
   const onDeleteContact = id => dispatch(deleteContact(id));
   return (

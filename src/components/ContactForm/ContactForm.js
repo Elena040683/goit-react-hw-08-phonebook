@@ -39,7 +39,7 @@ export default function ContactForm() {
       )
     ) {
       return alert(`${name} is already exist`);
-    } else dispatch(addContacts(name, number));
+    } else dispatch(addContacts({ name, number }));
     setContact(contact);
     resetForm();
   };
